@@ -1,0 +1,22 @@
+window.addEventListener("scroll", () => {
+  let sections = document.querySelectorAll(".section");
+
+  sections.forEach(section => {
+    let pos = section.getBoundingClientRect().top;
+    let screenHeight = window.innerHeight;
+
+    if (pos < screenHeight - 150) {
+      section.classList.add("active");
+    }
+  });
+});
+
+function showPopup(title, info) {
+  document.getElementById("popup").style.display = "block";
+  document.getElementById("pop-title").innerText = title;
+  document.getElementById("pop-content").innerText = info;
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}

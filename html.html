@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karnataka Scroll Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Discover Karnataka</h1>
+  <p>Scroll down to explore famous places</p>
+</header>
+
+<section class="section section1">
+  <img src="images/mysore-palace.jpg" class="bg-img" />
+  <div class="content" onclick="showPopup('Mysore Palace','Chamundi Hills, Brindavan Gardens, Jagmohan Palace, St. Philomena Church')">
+    <h2>Mysore Palace</h2>
+    <p>The grand royal palace famous for golden illumination.</p>
+  </div>
+</section>
+
+<section class="section section2">
+  <img src="images/hampi.jpg" class="bg-img" />
+  <div class="content" onclick="showPopup('Hampi','Virupaksha Temple, Stone Chariot, Lotus Mahal, Vittala Temple')">
+    <h2>Hampi</h2>
+    <p>UNESCO heritage site with ancient temples and ruins.</p>
+  </div>
+</section>
+
+<section class="section section3">
+  <img src="images/coorg.jpg" class="bg-img" />
+  <div class="content" onclick="showPopup('Coorg','Mandalpatti, Abbey Falls, Raja Seat, Coffee Plantations')">
+    <h2>Coorg</h2>
+    <p>Misty hills and coffee paradise of Karnataka.</p>
+  </div>
+</section>
+
+<section class="section section4">
+  <img src="images/jog-falls.jpg" class="bg-img" />
+  <div class="content" onclick="showPopup('Jog Falls','Viewpoints, Linganamakki Dam, Waterfall Valley Trails')">
+    <h2>Jog Falls</h2>
+    <p>One of the tallest waterfalls in India.</p>
+  </div>
+</section>
+
+<section class="section section5">
+  <img src="images/udupi.jpg" class="bg-img" />
+  <div class="content" onclick="showPopup('Udupi','Malpe Beach, St. Mary’s Island, Krishna Temple, Sea Walk')">
+    <h2>Udupi</h2>
+    <p>Known for beaches and temple culture.</p>
+  </div>
+</section>
+
+<div id="popup" class="popup">
+  <h3 id="pop-title"></h3>
+  <p id="pop-content"></p>
+  <button class="close-btn" onclick="closePopup()">Close</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

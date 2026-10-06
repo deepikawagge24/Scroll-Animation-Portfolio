@@ -1,0 +1,191 @@
+/* BASIC RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background: black;
+}
+
+/* HEADER */
+.header {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
+              url("images/karnataka.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+  animation: fadeSlideDown 1.5s ease forwards;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.2rem;
+}
+
+/* SECTIONS */
+.section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* BACKGROUND IMAGE */
+.bg-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+  transform: scale(1.4);
+  opacity: 0;
+  transition: 2s ease;
+}
+
+/* CONTENT BOX */
+.content {
+  position: relative;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 25px 30px;
+  color: white;
+  width: 70%;
+  text-align: center;
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+  cursor: pointer;
+}
+
+/***************
+ DIFFERENT ANIMATIONS PER SECTION
+*****************/
+
+/* SECTION 1 – ZOOM-IN BACKGROUND */
+.section1.active .bg-img {
+  opacity: 1;
+  transform: scale(1);
+}
+.section1.active .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SECTION 2 – SLIDE FROM LEFT */
+.section2 .bg-img {
+  transform: translateX(-200px) scale(1.3);
+}
+.section2.active .bg-img {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+.section2 .content {
+  transform: translateX(-100px);
+}
+.section2.active .content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* SECTION 3 – SLIDE FROM RIGHT */
+.section3 .bg-img {
+  transform: translateX(200px) scale(1.3);
+}
+.section3.active .bg-img {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+.section3 .content {
+  transform: translateX(100px);
+}
+.section3.active .content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* SECTION 4 – FADE + SLOW ZOOM */
+.section4 .bg-img {
+  transform: scale(1.7);
+  opacity: 0;
+}
+.section4.active .bg-img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+.section4 .content {
+  transform: scale(0.7);
+}
+.section4.active .content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* SECTION 5 – ROTATE EFFECT */
+.section5 .bg-img {
+  transform: rotateY(90deg) scale(1.2);
+  opacity: 0;
+}
+.section5.active .bg-img {
+  transform: rotateY(0deg) scale(1);
+  opacity: 1;
+}
+.section5 .content {
+  transform: rotateX(90deg);
+}
+.section5.active .content {
+  transform: rotateX(0deg);
+  opacity: 1;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  background: white;
+  color: black;
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px black;
+  display: none;
+  z-index: 999;
+  animation: popShow 0.4s ease forwards;
+}
+
+.close-btn {
+  margin-top: 15px;
+  background: black;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* HEADER ANIMATION */
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popShow {
+  from { transform: translate(-50%, -50%) scale(0.6); opacity: 0; }
+  to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
